@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity >=0.8.2 <0.9.0;
+
+contract Hw4{
+    struct Product{
+        string name;
+        uint price;
+    }
+
+    Product public currentProduct;
+
+    function setProduct(string memory name, uint price) public {
+        Product memory product = Product (name,price);
+        currentProduct = product;
+    }
+
+    function getProduct() public view returns(Product memory){
+        return currentProduct;
+    }
+}
